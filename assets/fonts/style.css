@@ -1,0 +1,15 @@
+@font-face {
+   font-family: 'ROSEWOODSTD-REGULAR';
+   font-display: swap;
+   src: url('ROSEWOODSTD-REGULAR/font.OTF');
+}
+@font-face {
+   font-family: 'bahnschrift';
+   font-display: swap;
+   src: url('bahnschrift/font.ttf');
+}
+@font-face {
+   font-family: 'STENCIL';
+   font-display: swap;
+   src: url('STENCIL/font.TTF');
+}

@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NELDO ENTERPRISES deals in electronics, mobile and computer accessories, fashion, repairs, and ICT services.">
+<meta name="theme-color" content="#176b52">
+<title>NELDO ENTERPRISES | Electronics, Fashion & ICT Services</title>
+<link rel="shortcut icon" href="assets/images/photo-1652604894441-720x720.png" type="image/x-icon">
+
+<!-- Tailwind CSS config for class-based dark mode -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+    tailwind.config = {
+        darkMode: 'class',
+    }
+</script>
+
+<!-- Google Fonts: Orbitron for precision technical readouts -->
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Orbitron:wght@400;600;700;900&display=swap" rel="stylesheet">
+
+<!-- AOS Scroll Animations -->
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+<style>
+body, h1, h2, h3, p, a, button, input, select {
+    font-family: 'Orbitron', sans-serif;
+}
+
+/* ====== LIGHT MODE (PREMIUM METALLIC CHASSIS) ====== */
+body {
+    background-color: #cbd5e1;
+    background-image: 
+        linear-gradient(90deg, rgba(255,255,255,0.3) 0%, rgba(255,255,255,0) 20%, rgba(0,0,0,0.04) 40%, rgba(255,255,255,0.3) 60%, rgba(0,0,0,0.08) 80%, rgba(255,255,255,0.2) 100%),
+        linear-gradient(to bottom, rgba(255,255,255,0.4) 0%, rgba(0,0,0,0.08) 100%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.04) 0px, rgba(255,255,255,0.04) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 1px, transparent 1px, transparent 3px);
+    box-shadow: inset 0 0 60px rgba(0,0,0,0.12);
+    color: #0f172a;
+    overflow-x: hidden;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.hardware-panel {
+    background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #cbd5e1;
+    border-bottom: 4px solid #94a3b8;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.8), 0 10px 25px rgba(0, 0, 0, 0.05);
+    border-radius: 8px;
+    position: relative;
+}
+.hardware-panel::before {
+    content: '';
+    position: absolute;
+    inset: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 4px;
+    pointer-events: none;
+}
+
+.card-recessed {
+    background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+    border-top: 2px solid #94a3b8;
+    border-left: 2px solid #94a3b8;
+    border-right: 1px solid #f1f5f9;
+    border-bottom: 1px solid #f1f5f9;
+    box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 6px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.card-recessed:hover {
+    border-right-color: #0284c7;
+    border-bottom-color: #0284c7;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05), 0 0 15px rgba(2, 132, 199, 0.15);
+}
+.card-recessed img {
+    border: 2px solid #cbd5e1;
+    border-radius: 4px;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+    background-color: transparent; 
+}
+.card-recessed:hover img {
+    border-color: #0284c7;
+}
+
+.rivet-plate {
+    background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+    border: 1px solid #94a3b8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    padding: 6px 24px;
+    font-weight: 900;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    color: #0284c7;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 4px;
+}
+.rivet-plate::before, .rivet-plate::after {
+    content: '';
+    width: 5px; height: 5px;
+    background: #94a3b8;
+    border-radius: 50%;
+}
+
+.btn-machined, .telemetry-link {
+    background: linear-gradient(180deg, #f1f5f9 0%, #cbd5e1 100%) !important;
+    border-top: 1px solid #ffffff !important;
+    border-left: 1px solid #ffffff !important;
+    border-right: 2px solid #94a3b8 !important;
+    border-bottom: 4px solid #64748b !important;
+    color: #1e293b !important;
+    font-weight: 700;
+    text-shadow: 0 1px 0 rgba(255,255,255,0.8);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    transition: all 0.1s ease;
+    letter-spacing: 1.5px;
+}
+.btn-machined:hover, .telemetry-link:hover {
+    background: linear-gradient(180deg, #e2e8f0 0%, #94a3b8 100%) !important;
+    color: #0284c7 !important;
+    border-bottom-color: #0284c7 !important;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.15);
+}
+.btn-machined:active, .telemetry-link:active {
+    border-bottom-width: 1px !important;
+    transform: translateY(3px);
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-chassis {
+    background: #94a3b8;
+    border: 2px solid #64748b;
+    box-shadow: inset 0 3px 5px rgba(0,0,0,0.15);
+    border-radius: 30px;
+    width: 58px;
+    height: 28px;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.toggle-handle {
+    background: linear-gradient(180deg, #ffffff 0%, #e2e8f0 100%);
+    border: 1px solid #94a3b8;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 11px;
+    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.btn-logout {
+    background: linear-gradient(180deg, #fee2e2 0%, #fca5a5 100%) !important;
+    border-top: 1px solid #ffffff !important;
+    border-left: 1px solid #ffffff !important;
+    border-right: 2px solid #f87171 !important;
+    border-bottom: 4px solid #ef4444 !important;
+    color: #991b1b !important;
+}
+.btn-logout:hover {
+    background: linear-gradient(180deg, #fca5a5 0%, #f87171 100%) !important;
+    color: #7f1d1d !important;
+    border-bottom-color: #b91c1c !important;
+}
+
+.telemetry-link {
+    font-size: 0.72rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.telemetry-link-profile {
+    color: #0284c7 !important;
+    border-color: #cbd5e1 !important;
+}
+
+.input-machined {
+    background: #f8fafc;
+    border: 1px solid #94a3b8;
+    border-bottom: 2px solid #64748b;
+    color: #0f172a;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+    border-radius: 4px;
+    padding: 0.6rem 0.75rem;
+    font-size: 0.85rem;
+    transition: all 0.2s ease;
+}
+.input-machined:focus {
+    outline: none;
+    border-color: #0284c7;
+    border-bottom-color: #0284c7;
+    box-shadow: inset 0 1px 2px rgba(0,0,0,0.05), 0 0 10px rgba(2, 132, 199, 0.15);
+}
+
+.nav-chassis {
+    background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-bottom: 3px solid #0284c7;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+}
+
+.logo-cast {
+    font-weight: 900;
+    letter-spacing: 4px;
+    color: #0284c7;
+    background: linear-gradient(180deg, #0f172a 0%, #0284c7 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.steel-engraved-header {
+    font-weight: 900;
+    letter-spacing: 2px;
+    background: linear-gradient(180deg, #0f172a 20%, #0284c7 70%, #0369a1 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.faq-trigger {
+    background: linear-gradient(180deg, #e2e8f0 0%, #cbd5e1 100%);
+    border: 1px solid #94a3b8;
+    border-bottom: 2px solid #64748b;
+    transition: all 0.2s ease;
+}
+.faq-trigger:hover {
+    border-color: #64748b;
+    background: linear-gradient(180deg, #cbd5e1 0%, #94a3b8 100%);
+}
+.faq-trigger.active {
+    border-bottom-color: #0284c7;
+}
+.faq-content-pane {
+    background: #f1f5f9;
+    border-left: 2px solid #cbd5e1;
+    border-right: 2px solid #cbd5e1;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.05);
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.faq-indicator {
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    color: #64748b;
+}
+.faq-trigger.active .faq-indicator {
+    transform: rotate(180deg);
+    color: #0284c7;
+}
+
+#cookieNotice {
+    position: fixed;
+    bottom: 2rem; left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: linear-gradient(180deg, #f1f5f9 0%, #e2e8f0 100%);
+    border-top: 2px solid #ffffff;
+    border-left: 2px solid #ffffff;
+    border-right: 2px solid #cbd5e1;
+    border-bottom: 3px solid #94a3b8;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    padding: 1.25rem 2rem;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    max-width: 34rem;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: 100;
+}
+#cookieNotice::before {
+    content: '';
+    position: absolute;
+    inset: 4px;
+    border: 1px solid rgba(255,255,255,0.4);
+    pointer-events: none;
+}
+#cookieNotice.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+}
+
+
+/* ====== DARK MODE (PREMIUM INDUSTRIAL CHASSIS) ====== */
+.dark body {
+    /* Fixed: Swapped the erratic dark spot grid with a smoother dark technical alloy background */
+    background-color: #0f131a;
+    background-image: 
+        linear-gradient(90deg, rgba(255,255,255,0.04) 0%, rgba(255,255,255,0) 20%, rgba(0,0,0,0.2) 50%, rgba(255,255,255,0.02) 80%, rgba(255,255,255,0.04) 100%),
+        linear-gradient(to bottom, #1e2530 0%, #0f131a 100%),
+        repeating-linear-gradient(90deg, rgba(255,255,255,0.02) 0px, rgba(255,255,255,0.02) 1px, transparent 1px, transparent 4px),
+        repeating-linear-gradient(0deg, rgba(0,0,0,0.1) 0px, rgba(0,0,0,0.1) 1px, transparent 1px, transparent 3px);
+    box-shadow: inset 0 0 80px rgba(0,0,0,0.6);
+    color: #e2e8f0;
+}
+
+.dark .hardware-panel {
+    background: linear-gradient(180deg, #232936 0%, #161b24 100%);
+    border-top: 2px solid #38455e;
+    border-left: 2px solid #2d374b;
+    border-right: 2px solid #141923;
+    border-bottom: 4px solid #0d1016;
+    box-shadow: inset 0 1px 2px rgba(255, 255, 255, 0.08), inset 0 -3px 8px rgba(0, 0, 0, 0.5), 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+.dark .hardware-panel::before {
+    border: 1px solid #101319;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+.dark .card-recessed {
+    background: linear-gradient(180deg, #12161f 0%, #0d1016 100%);
+    border-top: 2px solid #090b0e;
+    border-left: 2px solid #090b0e;
+    border-right: 1px solid #2d374b;
+    border-bottom: 1px solid #2d374b;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.6), 0 1px 2px rgba(255, 255, 255, 0.02);
+}
+.dark .card-recessed:hover {
+    border-right-color: #00d2ff;
+    border-bottom-color: #00d2ff;
+    box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.7), 0 0 15px rgba(0, 210, 255, 0.15);
+}
+.dark .card-recessed img {
+    border: 2px solid #1b202b;
+    box-shadow: inset 0 2px 4px rgba(0,0,0,0.8);
+    filter: brightness(75%) contrast(105%);
+}
+.dark .card-recessed:hover img {
+    filter: brightness(100%) contrast(100%);
+    border-color: #00d2ff;
+}
+
+.dark .rivet-plate {
+    background: linear-gradient(180deg, #1f2531 0%, #131822 100%);
+    border: 1px solid #2d374b;
+    box-shadow: inset 0 1px 1px rgba(255,255,255,0.05), 0 4px 8px rgba(0,0,0,0.4);
+    color: #00d2ff;
+    text-shadow: 0 0 6px rgba(0, 210, 255, 0.3);
+}
+.dark .rivet-plate::before, .dark .rivet-plate::after {
+    background: #090b0e;
+    box-shadow: 0 1px 0 rgba(255,255,255,0.05);
+}
+
+.dark .btn-machined, .dark .telemetry-link {
+    background: linear-gradient(180deg, #2c3445 0%, #171b24 100%) !important;
+    border-top: 1px solid #3d4a63 !important;
+    border-left: 1px solid #333e54 !important;
+    border-right: 2px solid #0f1217 !important;
+    border-bottom: 4px solid #0a0c10 !important;
+    color: #d8dee9 !important;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.9);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 6px 10px rgba(0, 0, 0, 0.4);
+}
+.dark .btn-machined:hover, .dark .telemetry-link:hover {
+    background: linear-gradient(180deg, #1f242e 0%, #0f1217 100%) !important;
+    color: #aef710 !important;
+    border-right-color: #1f242e !important;
+    border-bottom-color: #aef710 !important;
+    text-shadow: 0 0 6px rgba(174, 247, 16, 0.4);
+    box-shadow: inset 0 1px 0 rgba(174, 247, 16, 0.05), 0 4px 12px rgba(174, 247, 16, 0.15);
+}
+.dark .btn-machined:active, .dark .telemetry-link:active {
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.7);
+}
+
+.dark .toggle-chassis {
+    background: #090b0e;
+    border-color: #1a2230;
+    box-shadow: inset 0 4px 10px rgba(0,0,0,0.8);
+}
+.dark .toggle-handle {
+    background: linear-gradient(180deg, #2c3445 0%, #171b24 100%);
+    border-color: #3d4a63;
+    left: 32px;
+}
+
+.dark .btn-logout {
+    background: linear-gradient(180deg, #5c2424 0%, #3a1515 100%) !important;
+    border-top: 1px solid #7c3535 !important;
+    border-left: 1px solid #6b2d2d !important;
+    border-right: 2px solid #240c0c !important;
+    border-bottom: 4px solid #1a0808 !important;
+    color: #fca5a5 !important;
+}
+.dark .btn-logout:hover {
+    background: linear-gradient(180deg, #3d1616 0%, #240c0c 100%) !important;
+    color: #ef4444 !important;
+    border-bottom-color: #ef4444 !important;
+    text-shadow: 0 0 6px rgba(239, 68, 68, 0.4);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.15);
+}
+
+.dark .telemetry-link-profile {
+    color: #00d2ff !important;
+    border-color: #1b354b !important;
+}
+
+.dark .input-machined {
+    background: #090b0e;
+    border: 1px solid #232d3d;
+    border-bottom: 2px solid #334155;
+    color: #f1f5f9;
+    box-shadow: inset 0 2px 5px rgba(0,0,0,0.8);
+}
+.dark .input-machined:focus {
+    border-color: #00d2ff;
+    border-bottom-color: #00d2ff;
+    box-shadow: inset 0 1px 3px rgba(0,0,0,0.9), 0 0 10px rgba(0, 210, 255, 0.15);
+}
+
+.dark .nav-chassis {
+    background: linear-gradient(180deg, #1f2531 0%, #131822 100%);
+    border-bottom: 3px solid #00d2ff;
+    box-shadow: inset 0 -1px 0 rgba(0,0,0,0.6), inset 0 1px 0 rgba(255,255,255,0.05), 0 10px 30px rgba(0,0,0,0.7);
+}
+
+.dark .logo-cast {
+    color: #00d2ff;
+    text-shadow: 0 0 10px rgba(0, 210, 255, 0.5);
+    background: linear-gradient(180deg, #ffffff 0%, #00d2ff 100%);
+    -webkit-background-clip: text;
+}
+
+.dark .steel-engraved-header {
+    background: linear-gradient(180deg, #ffffff 20%, #aef710 70%, #68960a 100%);
+    -webkit-background-clip: text;
+    filter: drop-shadow(0 2px 3px rgba(0,0,0,0.95));
+}
+
+.dark .faq-trigger {
+    background: linear-gradient(180deg, #12161f 0%, #0d1016 100%);
+    border: 1px solid #1a2230;
+    border-bottom: 2px solid #050608;
+    box-shadow: inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.dark .faq-trigger:hover {
+    border-color: #2d374b;
+    background: linear-gradient(180deg, #181f2c 0%, #0e121a 100%);
+}
+.dark .faq-trigger.active {
+    border-bottom-color: #00d2ff;
+}
+.dark .faq-content-pane {
+    background: #090b0e;
+    border-left: 2px solid #1a2230;
+    border-right: 2px solid #1a2230;
+    box-shadow: inset 0 4px 10px rgba(0,0,0,0.8);
+}
+.dark .faq-trigger.active .faq-indicator {
+    color: #00d2ff;
+}
+
+.dark #cookieNotice {
+    background: linear-gradient(180deg, #232936 0%, #12151c 100%);
+    border-top: 2px solid #38455e;
+    border-left: 2px solid #2d374b;
+    border-right: 2px solid #0f1217;
+    border-bottom: 3px solid #0a0c10;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.95);
+}
+.dark #cookieNotice::before {
+    border: 1px solid #090b0e;
+}
+
+
+/* ===== NELDO MODERN RETAIL REFRESH ===== */
+:root { --brand:#176b52; --brand-dark:#104b3a; --accent:#e99a35; --ink:#17231e; --muted:#64736b; --surface:#ffffff; --page:#f5f7f4; }
+html { scroll-behavior:smooth; }
+body, h1, h2, h3, p, a, button, input, select { font-family:'Inter',sans-serif; }
+body { background:var(--page); background-image:radial-gradient(circle at 8% 0%,rgba(23,107,82,.07),transparent 27%),radial-gradient(circle at 96% 15%,rgba(233,154,53,.08),transparent 22%); color:var(--ink); box-shadow:none; }
+.hardware-panel, .dark .hardware-panel { background:var(--surface); border:1px solid #e5ebe6; border-radius:18px; box-shadow:0 10px 30px rgba(22,49,35,.06); }
+.hardware-panel::before, .dark .hardware-panel::before { display:none; }
+.card-recessed, .dark .card-recessed { background:#f8faf8; border:1px solid #e7ede8; border-radius:14px; box-shadow:none; }
+.card-recessed:hover { border-color:#a9cdbd; box-shadow:0 10px 24px rgba(23,107,82,.08); transform:translateY(-2px); }
+.card-recessed img { border:0; border-radius:10px; }
+.rivet-plate, .dark .rivet-plate { background:#eaf4ef; border:0; box-shadow:none; border-radius:999px; color:var(--brand); padding:8px 16px; font-size:.72rem; letter-spacing:1.4px; text-shadow:none; }
+.rivet-plate::before,.rivet-plate::after { display:none; }
+.btn-machined, .telemetry-link, .dark .btn-machined, .dark .telemetry-link { background:var(--brand)!important; color:white!important; border:1px solid var(--brand)!important; border-radius:999px; box-shadow:none; text-shadow:none; letter-spacing:.2px; font-weight:700; transition:transform .2s,background .2s,box-shadow .2s; }
+.btn-machined:hover, .telemetry-link:hover, .dark .btn-machined:hover, .dark .telemetry-link:hover { background:var(--brand-dark)!important; color:white!important; border-color:var(--brand-dark)!important; box-shadow:0 8px 18px rgba(23,107,82,.18); transform:translateY(-1px); }
+.btn-machined:active,.telemetry-link:active { transform:translateY(0); }
+.nav-chassis,.dark .nav-chassis { background:rgba(255,255,255,.94); backdrop-filter:blur(14px); border-bottom:1px solid #e5ebe6; box-shadow:0 4px 18px rgba(20,45,31,.05); }
+.logo-cast { background:none; color:var(--brand); -webkit-text-fill-color:var(--brand); letter-spacing:2px; font-family:'Inter',sans-serif; }
+.steel-engraved-header,.dark .steel-engraved-header { background:none; color:var(--ink); -webkit-text-fill-color:var(--ink); letter-spacing:-1px; line-height:1.12; }
+.faq-trigger,.dark .faq-trigger { background:#f8faf8; border:1px solid #e5ebe6; border-radius:12px; }
+.faq-trigger:hover { background:#edf6f0; }
+.input-machined { border:1px solid #dce5de; border-radius:10px; box-shadow:none; }
+.toggle-chassis { border:1px solid #d7e1da; background:#e3eae5; box-shadow:none; }
+.dark body { background:#101b16; background-image:radial-gradient(circle at 8% 0%,rgba(40,130,91,.12),transparent 27%); color:#e5eee8; box-shadow:none; }
+.dark .hardware-panel { background:#17231d; border-color:#263a2e; box-shadow:0 12px 32px rgba(0,0,0,.18); }
+.dark .card-recessed { background:#1d2b23; border-color:#2a3d31; }
+.dark .rivet-plate { background:#203b2d; color:#a9dec1; }
+.dark .nav-chassis { background:rgba(18,31,24,.94); border-bottom-color:#294737; }
+.dark .logo-cast { color:#8dd2ac; -webkit-text-fill-color:#8dd2ac; }
+.dark .steel-engraved-header { color:#edf7f0; -webkit-text-fill-color:#edf7f0; }
+.dark .faq-trigger { background:#1d2b23; border-color:#2a3d31; }
+.dark .faq-trigger:hover { background:#23392b; }
+.dark .input-machined { background:#142019; border-color:#385142; color:#f0f7f2; }
+#retailHero { background:linear-gradient(120deg,#103f31 0%,#176b52 58%,#2c8665 100%); color:#fff; border-radius:24px; overflow:hidden; position:relative; box-shadow:0 18px 45px rgba(16,75,58,.17); }
+#retailHero::after { content:''; position:absolute; width:330px;height:330px;border:1px solid rgba(255,255,255,.12);border-radius:50%;right:-70px;top:-125px;box-shadow:0 0 0 34px rgba(255,255,255,.035),0 0 0 72px rgba(255,255,255,.025);pointer-events:none; }
+.retail-chip { display:inline-flex; align-items:center; gap:8px; padding:7px 12px; border-radius:999px; background:rgba(255,255,255,.13); color:#e2f6e9; font-size:.72rem; font-weight:700; letter-spacing:.7px; }
+.retail-category { min-height:190px; transition:transform .2s,box-shadow .2s; }
+.retail-category:hover { transform:translateY(-4px); box-shadow:0 14px 30px rgba(22,49,35,.1); }
+.retail-icon { display:grid; place-items:center; width:54px;height:54px;border-radius:16px;background:#eaf4ef;font-size:1.65rem; }
+.dark .retail-icon { background:#254333; }
+@media(max-width:640px){ #retailHero{border-radius:18px;} #retailHero::after{right:-180px;} .telemetry-link{font-size:.66rem;padding:.45rem .7rem;} }
+
+/* ===== Modern responsive header and accessible contact actions ===== */
+.neldo-header { transition:background .2s ease, box-shadow .2s ease; }
+.neldo-header-inner { min-height:78px; }
+.neldo-brand { text-decoration:none; flex-shrink:0; }
+.neldo-brand-mark { display:grid; place-items:center; width:46px; height:46px; border-radius:15px; background:linear-gradient(145deg,#176b52,#104b3a); color:#fff; font-size:1.45rem; font-weight:900; box-shadow:0 7px 16px rgba(23,107,82,.2); }
+.neldo-brand-name { color:#173d2e; font-size:1.12rem; font-weight:900; line-height:1.15; letter-spacing:.045em; white-space:nowrap; }
+.neldo-brand-name span { color:var(--brand); }
+.neldo-brand-tagline { margin-top:5px; color:#6a786f; font-size:.61rem; font-weight:800; letter-spacing:.09em; }
+.neldo-header-actions { justify-content:flex-end; }
+.neldo-socials { padding:4px; border:1px solid #e5ebe6; border-radius:999px; background:rgba(247,250,247,.86); }
+.social-action { display:inline-flex; align-items:center; justify-content:center; gap:7px; min-height:38px; padding:8px 12px; border-radius:999px; color:#294137; text-decoration:none; font-size:.78rem; font-weight:750; line-height:1; transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease; }
+.social-action svg { width:16px; height:16px; fill:currentColor; flex-shrink:0; }
+.social-action:hover { transform:translateY(-1px); box-shadow:0 5px 12px rgba(22,49,35,.1); }
+.social-whatsapp { color:#137347; background:#e8f6ed; }
+.social-whatsapp:hover { color:#fff; background:#16834d; }
+.social-call { color:#185c49; background:#eaf4ef; }
+.social-call:hover { color:#fff; background:#176b52; }
+.social-email { color:#8b5b14; background:#fff3dd; }
+.social-email:hover { color:#fff; background:#a86c17; }
+.neldo-header-tools { padding-left:10px; border-left:1px solid #e1e9e3; }
+.theme-label { color:#68776e; font-size:.68rem; font-weight:800; }
+.neldo-auth-container { min-height:38px; }
+.neldo-auth-container .telemetry-link { white-space:nowrap; }
+.dark .neldo-brand-name { color:#edf7f0; }
+.dark .neldo-brand-name span { color:#9ad7b3; }
+.dark .neldo-brand-tagline,.dark .theme-label { color:#b2c4b8; }
+.dark .neldo-socials { background:#17251d; border-color:#2b4234; }
+.dark .social-whatsapp { color:#a8e8bf; background:#203c2b; }
+.dark .social-whatsapp:hover { color:#fff; background:#16834d; }
+.dark .social-call { color:#b6e2cb; background:#20382d; }
+.dark .social-call:hover { color:#fff; background:#176b52; }
+.dark .social-email { color:#f5d49b; background:#3c3020; }
+.dark .social-email:hover { color:#fff; background:#98651d; }
+.dark .neldo-header-tools { border-left-color:#2a3d31; }
+@media(max-width:1023px) {
+  .neldo-header-inner { align-items:stretch; }
+  .neldo-header-actions { justify-content:space-between; }
+  .neldo-header-tools { padding-left:0; border-left:0; }
+}
+@media(max-width:640px) {
+  .neldo-header-inner { gap:10px; padding-top:10px; padding-bottom:10px; }
+  .neldo-brand-mark { width:40px; height:40px; border-radius:13px; }
+  .neldo-brand-name { font-size:.98rem; }
+  .neldo-brand-tagline { font-size:.52rem; letter-spacing:.06em; }
+  .neldo-header-actions { align-items:center; gap:8px; }
+  .neldo-socials { gap:3px; padding:3px; }
+  .social-action { width:36px; min-height:36px; padding:9px; }
+  .social-action span { display:none; }
+  .social-action svg { width:17px; height:17px; }
+  .theme-label { display:none; }
+  .neldo-header-tools { gap:7px; }
+  .neldo-auth-container .telemetry-link { font-size:.62rem; padding:.55rem .7rem; }
+  .main, main { padding-top:160px; }
+}
+@media(min-width:641px) and (max-width:1023px) {
+  .neldo-header-actions { flex-wrap:wrap; }
+  .social-action { padding:8px 10px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .neldo-header,.social-action { transition:none; }
+  .social-action:hover { transform:none; }
+}
+
+
+
+/* User profile modal */
+.profile-modal-card { max-height: min(90vh, 720px); overflow-y: auto; }
+.profile-modal-close { position:absolute; top:14px; right:16px; display:grid; place-items:center; width:38px; height:38px; border-radius:50%; background:#edf4ef; color:#176b52; font-size:1.7rem; line-height:1; transition:background .2s,transform .2s; }
+.profile-modal-close:hover { background:#dcebe1; transform:rotate(90deg); }
+.profile-detail-card { min-width:0; padding:15px 16px; border:1px solid #e0e9e2; border-radius:14px; background:#f7faf7; }
+.profile-detail-card span { display:block; margin-bottom:7px; color:#176b52; font-size:.7rem; font-weight:800; letter-spacing:.09em; text-transform:uppercase; }
+.profile-detail-card strong { display:block; overflow-wrap:anywhere; color:#17231e; font-size:.92rem; font-weight:700; }
+.dark .profile-modal-close { background:#203b2d; color:#b7e2c7; }
+.dark .profile-modal-close:hover { background:#294b38; }
+.dark .profile-detail-card { background:#1d2b23; border-color:#2a3d31; }
+.dark .profile-detail-card span { color:#a9dec1; }
+.dark .profile-detail-card strong { color:#edf7f0; }
+@media(prefers-reduced-motion:reduce) { .profile-modal-close { transition:none; } }
+
+</style>
+</head>
+<body>
+
+<!-- Modern NELDO ENTERPRISES Header -->
+<header class="nav-chassis neldo-header fixed inset-x-0 top-0 z-40">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="neldo-header-inner flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 py-3">
+            <!-- Brand -->
+            <a href="index.html" class="neldo-brand flex items-center gap-3 self-start" aria-label="NELDO ENTERPRISES home">
+                <span class="neldo-brand-mark" aria-hidden="true">N</span>
+                <span class="flex flex-col min-w-0">
+                    <span class="neldo-brand-name">NELDO <span>ENTERPRISES</span></span>
+                    <span class="neldo-brand-tagline">ELECTRONICS · FASHION · ICT SERVICES</span>
+                </span>
+            </a>
+
+            <!-- Quick contact and account actions -->
+            <div class="neldo-header-actions flex flex-wrap items-center gap-2 sm:gap-3">
+                <nav class="neldo-socials flex flex-wrap items-center gap-2" aria-label="Quick contact links">
+                    <a href="https://wa.me/254716375459" class="social-action social-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with NELDO ENTERPRISES on WhatsApp" title="WhatsApp">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.7 6L0 24l6.4-1.7a11.8 11.8 0 0 0 5.7 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.7h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.4 6.6 2 12.1 2a9.7 9.7 0 0 1 6.9 2.9 9.7 9.7 0 0 1 2.9 6.9c0 5.5-4.4 9.9-9.8 9.9Zm5.4-7.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.7-1.6-1-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.2 3 1.4 3.2c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="tel:+254716375459" class="social-action social-call" aria-label="Call NELDO ENTERPRISES" title="Call us">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.2 1Z"/></svg>
+                        <span>Call</span>
+                    </a>
+                    <a href="mailto:cynicdroid@gmail.com" class="social-action social-email" aria-label="Email NELDO ENTERPRISES" title="Email us">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v.4l10 6.3 10-6.3V6a2 2 0 0 0-2-2ZM2 8.8V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.8l-9.5 6a1 1 0 0 1-1 0Z"/></svg>
+                        <span>Email</span>
+                    </a>
+                </nav>
+
+                <div class="neldo-header-tools flex items-center gap-2">
+                    <div class="neldo-theme-control flex items-center gap-2" title="Switch appearance">
+                        <span class="theme-label">Theme</span>
+                        <button type="button" id="themeToggleBtn" onclick="toggleThemeEngine()" class="toggle-chassis" aria-label="Toggle light or dark theme" title="Toggle light or dark theme">
+                            <span id="themeToggleHandle" class="toggle-handle">🌙</span>
+                        </button>
+                    </div>
+                    <div id="authNavContainer" class="neldo-auth-container flex items-center gap-2">
+                        <!-- Injected by the existing authentication script -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Dashboard Frame -->
+<main class="pt-36 sm:pt-32 lg:pt-32 pb-12 relative z-10 container mx-auto px-4 md:px-6 space-y-6">
+    <!-- Modern retail hero -->
+    <section id="retailHero" class="p-6 sm:p-9 md:p-12" data-aos="fade-up">
+        <div class="relative z-10 max-w-3xl">
+            <span class="retail-chip">✨ YOUR EVERYDAY RETAIL & TECH PARTNER</span>
+            <p class="mt-5 text-sm font-bold tracking-[.18em] uppercase text-emerald-100">Welcome to</p>
+            <h1 class="mt-2 text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight text-white">NELDO <span class="text-amber-300">ENTERPRISES</span></h1>
+            <p class="mt-4 max-w-2xl text-base sm:text-lg leading-relaxed text-emerald-50">Shop smart. Dress well. Stay connected.</p>
+            <p class="mt-2 max-w-2xl text-sm sm:text-base leading-relaxed text-emerald-100">Discover electronics, phone and computer accessories, fashion finds, and reliable ICT services—all in one friendly store.</p>
+            <div class="mt-7 flex flex-wrap gap-3">
+                <a href="Purchase.html" class="inline-flex items-center justify-center rounded-full bg-amber-400 px-6 py-3 font-bold text-emerald-950 shadow-sm hover:bg-amber-300">Explore Our Shop <span class="ml-2" aria-hidden="true">→</span></a>
+                <a href="https://wa.me/254716375459?text=Hello%20NELDO%20ENTERPRISES%2C%20I%27d%20like%20to%20make%20an%20inquiry." target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 font-bold text-white hover:bg-white/10">Chat on WhatsApp</a>
+                <a href="https://maps.app.goo.gl/hBsrVCKrgg9p9Kys9" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center rounded-full border border-amber-300/70 px-6 py-3 font-bold text-amber-200 hover:bg-amber-300/10" aria-label="Find NELDO ENTERPRISES at our exact pinned location">📍 Find Us</a>
+            </div>
+            <p class="mt-5 text-xs sm:text-sm text-emerald-100">ELECTRONICS <span class="mx-2 text-amber-300">•</span> ACCESSORIES <span class="mx-2 text-amber-300">•</span> FASHION <span class="mx-2 text-amber-300">•</span> ICT SERVICES</p>
+        </div>
+    </section>
+
+    <!-- Retail departments: electronics, fashion and ICT -->
+    <section class="pt-2" aria-labelledby="departmentsHeading">
+        <div class="mb-5 flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+            <div><p class="text-xs font-bold uppercase tracking-[.18em] text-emerald-700 dark:text-emerald-300">Find what you need</p><h2 id="departmentsHeading" class="mt-1 text-2xl sm:text-3xl font-extrabold tracking-tight text-slate-900 dark:text-white">Shop our departments</h2></div>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <a href="Purchase.html" class="hardware-panel retail-category p-5 sm:p-6 block"><div class="retail-icon">📱</div><h3 class="mt-4 text-lg font-extrabold text-slate-900 dark:text-white">Electronics & Accessories</h3><p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-gray-300">Smartphones, chargers, cables, earphones, gadgets, computer accessories and everyday tech essentials.</p><span class="mt-4 inline-block text-sm font-bold text-emerald-700 dark:text-emerald-300">Browse electronics →</span></a>
+            <a href="Purchase.html" class="hardware-panel retail-category p-5 sm:p-6 block"><div class="retail-icon">👗</div><h3 class="mt-4 text-lg font-extrabold text-slate-900 dark:text-white">Fashion & Lifestyle</h3><p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-gray-300">Explore clothing, beauty and lifestyle finds selected to help you express your style.</p><span class="mt-4 inline-block text-sm font-bold text-emerald-700 dark:text-emerald-300">Explore fashion →</span></a>
+            <a href="Purchase.html" class="hardware-panel retail-category p-5 sm:p-6 block"><div class="retail-icon">🛠️</div><h3 class="mt-4 text-lg font-extrabold text-slate-900 dark:text-white">ICT & Repair Services</h3><p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-gray-300">Phone and laptop repairs, screen replacement, software support, diagnostics and upgrades.</p><span class="mt-4 inline-block text-sm font-bold text-emerald-700 dark:text-emerald-300">Get tech support →</span></a>
+        </div>
+    </section>
+    
+    <!-- Upper Split Control Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-stretch">
+        
+        <!-- About Us Panel: Business Overview -->
+        <div class="lg:col-span-7 hardware-panel p-6 md:p-8 flex flex-col justify-between" data-aos="fade-up">
+            <div>
+                <span class="rivet-plate mb-5">WHO WE ARE</span>
+                <h2 class="text-2xl md:text-4xl font-black mb-4 tracking-tight steel-engraved-header">
+                    Technology, Style &amp; Service You Can Trust.
+                </h2>
+                <p class="text-xs md:text-sm font-bold tracking-wide text-emerald-700 dark:text-emerald-300 mb-5">
+                    ELECTRONICS • ACCESSORIES • FASHION • ICT SERVICES
+                </p>
+                <div class="space-y-4 text-slate-700 dark:text-gray-300 text-sm leading-relaxed card-recessed p-5 md:p-6 mb-6">
+                    <p><strong class="text-slate-900 dark:text-white">NELDO ENTERPRISES</strong> brings together technology, fashion, and everyday essentials in one convenient destination.</p>
+                    <p>From electronics and mobile accessories to clothing, beauty products, and lifestyle items, we help customers discover practical products that suit their needs and budgets.</p>
+                    <p>Our ICT department provides mobile phone and computer repairs, software support, troubleshooting, upgrades, and other practical technology solutions.</p>
+                    <p>We believe in affordable options, helpful advice, reliable service, and building lasting relationships with our customers.</p>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-6">
+                    <div class="card-recessed p-4 text-center">
+                        <div class="text-2xl mb-2" aria-hidden="true">🛍️</div>
+                        <h3 class="text-xs font-bold text-slate-900 dark:text-white">Quality Products</h3>
+                        <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Everyday essentials</p>
+                    </div>
+                    <div class="card-recessed p-4 text-center">
+                        <div class="text-2xl mb-2" aria-hidden="true">🛠️</div>
+                        <h3 class="text-xs font-bold text-slate-900 dark:text-white">Expert Support</h3>
+                        <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Practical ICT solutions</p>
+                    </div>
+                    <div class="card-recessed p-4 text-center">
+                        <div class="text-2xl mb-2" aria-hidden="true">🤝</div>
+                        <h3 class="text-xs font-bold text-slate-900 dark:text-white">Customer Care</h3>
+                        <p class="text-xs text-slate-600 dark:text-gray-400 mt-1">Friendly assistance</p>
+                    </div>
+                </div>
+            </div>
+            <a href="About.html" class="btn-machined px-8 py-3 rounded-full text-sm font-bold inline-flex items-center justify-center self-start gap-2">DISCOVER OUR STORY <span aria-hidden="true">→</span></a>
+            <section class="mt-7 pt-6 border-t border-emerald-200 dark:border-emerald-900" aria-labelledby="customerQuestionsHeading" data-aos="fade-up">
+    <div class="mb-5"><span class="rivet-plate">CUSTOMER QUESTIONS</span></div>
+    <div class="space-y-3">
+        <div class="accordion-item">
+            <button type="button" class="faq-trigger w-full flex justify-between items-center p-4 rounded text-left focus:outline-none select-none" aria-expanded="false">
+                <span class="font-black text-slate-800 dark:text-gray-200 text-xs tracking-wider uppercase">What does NELDO ENTERPRISES offer?</span>
+                <svg class="faq-indicator w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-content-pane"><div class="p-4 text-slate-700 dark:text-gray-400 text-xs leading-relaxed space-y-2 font-medium"><p>We bring together electronics, phone and computer accessories, fashion and lifestyle products, and practical ICT services in one business.</p></div></div>
+        </div>
+        <div class="accordion-item">
+            <button type="button" class="faq-trigger w-full flex justify-between items-center p-4 rounded text-left focus:outline-none select-none" aria-expanded="false">
+                <span class="font-black text-slate-800 dark:text-gray-200 text-xs tracking-wider uppercase">Do you repair phones and computers?</span>
+                <svg class="faq-indicator w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-content-pane"><div class="p-4 text-slate-700 dark:text-gray-400 text-xs leading-relaxed space-y-2 font-medium"><p>Yes. Our ICT services include phone and laptop repairs, screen replacement, diagnostics, software support, upgrades, troubleshooting and data recovery where possible. Contact us to discuss your device and its fault.</p></div></div>
+        </div>
+        <div class="accordion-item">
+            <button type="button" class="faq-trigger w-full flex justify-between items-center p-4 rounded text-left focus:outline-none select-none" aria-expanded="false">
+                <span class="font-black text-slate-800 dark:text-gray-200 text-xs tracking-wider uppercase">How do I check a product or find your shop?</span>
+                <svg class="faq-indicator w-4 h-4 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M19 9l-7 7-7-7"></path></svg>
+            </button>
+            <div class="faq-content-pane"><div class="p-4 text-slate-700 dark:text-gray-400 text-xs leading-relaxed space-y-2 font-medium"><p>Contact us to confirm product availability, prices or service details. For directions, use our exact pinned Google Maps location.</p><p><a class="font-bold text-emerald-700 dark:text-emerald-300 underline" href="https://maps.app.goo.gl/hBsrVCKrgg9p9Kys9" target="_blank" rel="noopener noreferrer">Open our pinned location in Google Maps ↗</a></p></div></div>
+        </div>
+    </div>
+</section>
+        </div>
+
+        <!-- Right Panel Block: Stacked Component Modules -->
+        <div class="lg:col-span-5 flex flex-col gap-4">
+            
+            <!-- Module 1: Privacy Control Console -->
+            <div class="p-4 hardware-panel flex flex-col justify-between" data-aos="fade-up" data-aos-delay="50">
+                <div class="card-recessed p-3 mb-3 flex items-center gap-4 flex-1">
+                    <img src="assets/images/security.png" alt="Data Security" class="w-14 h-14 object-contain shrink-0">
+                    <div>
+                        <h2 class="text-xs font-black mb-1 tracking-wide text-slate-900 dark:text-gray-200">DATA SECURITY</h2>
+                        <p class="text-slate-700 dark:text-gray-400 text-[11px] leading-tight font-medium">We respect your privacy and aim to handle customer information responsibly.</p>
+                    </div>
+                </div>
+                <div class="flex gap-2">
+                    <a href="Privacy.html" class="btn-machined py-1.5 text-[10px] rounded flex-1 text-center">PRIVACY</a>
+                    <a href="Cookie.html" class="btn-machined py-1.5 text-[10px] rounded flex-1 text-center">COOKIES</a>
+                </div>
+            </div>
+
+            <!-- Module 2: Communication Hub Terminal -->
+            <div class="p-4 hardware-panel flex flex-col justify-between" data-aos="fade-up" data-aos-delay="100">
+                <div class="card-recessed p-3 mb-3 flex items-center gap-4 flex-1">
+                    <img src="assets/images/contact.png" alt="Contact" class="w-14 h-14 object-contain shrink-0">
+                    <div>
+                        <h2 class="text-xs font-black mb-1 tracking-wide text-slate-900 dark:text-gray-200">CONTACT US</h2>
+                        <p class="text-slate-700 dark:text-gray-400 text-[11px] leading-tight font-medium">Have a question about a product, repair, or service? Get in touch with our team.</p>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <a href="Contacts.html" class="btn-machined py-2 text-[10px] rounded text-center block">CONTACT US</a>
+                    <a href="https://maps.app.goo.gl/hBsrVCKrgg9p9Kys9" target="_blank" rel="noopener noreferrer" class="btn-machined py-2 text-[10px] rounded text-center block" aria-label="Get directions to NELDO ENTERPRISES using the exact pinned location">GET DIRECTIONS ↗</a>
+                </div>
+            </div>
+
+            <!-- Module 3: Technical Forum Array -->
+            <div class="p-4 hardware-panel flex flex-col justify-between" data-aos="fade-up" data-aos-delay="150">
+                <div class="card-recessed p-3 mb-3 flex items-center gap-4 flex-1">
+                    <img src="assets/images/forum.png" alt="Forum" class="w-14 h-14 object-contain shrink-0">
+                    <div>
+                        <h2 class="text-xs font-black mb-1 tracking-wide text-slate-900 dark:text-gray-200">OUR FORUM</h2>
+                        <p class="text-slate-700 dark:text-gray-400 text-[11px] leading-tight font-medium">Inquire for diagnostic help service, report interface bugs, or submit firmware requests.</p>
+                    </div>
+                </div>
+                <a href="Forum.html" class="btn-machined py-1.5 text-[10px] rounded text-center block w-full">OPEN FORUM</a>
+            </div>
+
+        </div>
+    </div>
+
+
+</main>
+
+<!-- USER PROFILE MODAL: Opens from the header after login -->
+<div id="profileModal" class="fixed inset-0 bg-slate-950/65 backdrop-blur-sm hidden items-center justify-center z-[60] p-4" role="dialog" aria-modal="true" aria-labelledby="profileModalTitle" aria-hidden="true">
+    <div class="profile-modal-card hardware-panel w-full max-w-xl p-5 sm:p-7 relative">
+        <button type="button" onclick="toggleProfileModal(false)" class="profile-modal-close" aria-label="Close user profile">&times;</button>
+        <div class="mb-6 pr-10">
+            <span class="rivet-plate">YOUR NELDO ACCOUNT</span>
+            <h2 id="profileModalTitle" class="text-2xl sm:text-3xl font-extrabold tracking-tight mt-4 text-slate-900 dark:text-white">User Profile</h2>
+            <p class="text-sm text-slate-600 dark:text-slate-300 mt-2">Review the contact details saved to your account.</p>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <div class="profile-detail-card"><span>Full name</span><strong id="profName">—</strong></div>
+            <div class="profile-detail-card"><span>Email address</span><strong id="profEmail">—</strong></div>
+            <div class="profile-detail-card"><span>Phone number</span><strong id="profPhone">—</strong></div>
+            <div class="profile-detail-card"><span>Delivery location</span><strong id="profLocation">—</strong></div>
+        </div>
+        <div class="mt-6 flex flex-col-reverse sm:flex-row sm:justify-end gap-3">
+            <button type="button" onclick="toggleProfileModal(false)" class="telemetry-link px-5 py-3">CLOSE</button>
+            <button type="button" onclick="handleLogout(); toggleProfileModal(false)" class="telemetry-link btn-logout px-5 py-3">LOG OUT</button>
+        </div>
+    </div>
+</div>
+
+<!-- SIMPLE ENGLISH REGISTRATION / LOGIN MODAL -->
+<div id="authModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm hidden items-center justify-center z-50 p-4">
+    <div class="hardware-panel max-w-lg w-full p-6 relative">
+        <!-- Close Button -->
+        <button onclick="toggleAuthModal(false)" class="absolute top-4 right-4 text-gray-500 hover:text-white font-black text-sm select-none">&times; CLOSE</button>
+        
+        <div class="text-center mb-6"><span class="rivet-plate" id="modalBadge">CREATE AN ACCOUNT</span></div>
+        
+        <!-- Registration Form Subsystem -->
+        <form id="registrationForm" onsubmit="handleRegistration(event)" class="space-y-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-1">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-slate-700 dark:text-gray-400">Your Full Name</label>
+                    <input type="text" id="regName" required class="input-machined" placeholder="Enter your full name">
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-slate-700 dark:text-gray-400">Email Address</label>
+                    <input type="email" id="regEmail" required class="input-machined" placeholder="yourname@example.com">
+                </div>
+            </div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div class="flex flex-col gap-1">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-slate-700 dark:text-gray-400">Phone Number</label>
+                    <input type="tel" id="regPhone" required class="input-machined" placeholder="e.g. 0716375459">
+                </div>
+                <div class="flex flex-col gap-1">
+                    <label class="text-[10px] uppercase font-bold tracking-widest text-slate-700 dark:text-gray-400">Where do you live?</label>
+                    <input type="text" id="regLocation" required class="input-machined" placeholder="Town, County">
+                </div>
+            </div>
+            <div class="flex flex-col gap-1">
+                <label class="text-[10px] uppercase font-bold tracking-widest text-slate-700 dark:text-gray-400">Create a Password</label>
+                <input type="password" id="regPassword" required class="input-machined" placeholder="Choose a secure password">
+            </div>
+            <button type="submit" class="btn-machined w-full py-3 rounded text-xs uppercase font-bold mt-2">REGISTER NOW</button>
+            <p class="text-center text-[10px] text-slate-600 dark:text-gray-500 tracking-wide mt-2">Already have an account? <span onclick="switchModalMode('login')" class="text-sky-700 dark:text-sky-400 cursor-pointer underline">Log In Here</span></p>
+        </form>
+
+        <!-- Login Form Subsystem -->
+        <form id="loginForm" onsubmit="handleLogin(event)" class="space-y-4 hidden">
+            <div class="flex flex-col gap-1">
+                <label class="text-[10px] uppercase font-bold tracking-widest text-slate-700 dark:text-gray-400">Your Email Address</label>
+                <input type="email" id="loginEmail" required class="input-machined" placeholder="yourname@example.com">
+            </div>
+            <div class="flex flex-col gap-1">
+                <label class="text-[10px] uppercase font-bold tracking-widest text-slate-700 dark:text-gray-400">Your Password</label>
+                <input type="password" id="loginPassword" required class="input-machined" placeholder="Enter your password">
+            </div>
+            <button type="submit" class="btn-machined w-full py-3 rounded text-xs uppercase font-bold mt-2">LOG IN</button>
+            <p class="text-center text-[10px] text-slate-600 dark:text-gray-500 tracking-wide mt-2">Need a new account? <span onclick="switchModalMode('register')" class="text-sky-700 dark:text-sky-400 cursor-pointer underline">Sign Up Here</span></p>
+        </form>
+    </div>
+</div>
+
+<!-- Base Chassis Footer Frame -->
+<footer class="bg-white border-t-4 border-slate-200 dark:bg-black dark:border-neutral-900 py-6 text-center text-xs tracking-widest relative z-10">
+    <p class="font-black inline-block uppercase text-slate-800 dark:text-transparent dark:bg-clip-text dark:bg-gradient-to-b dark:from-white dark:to-lime-600" style="filter: drop-shadow(0 2px 3px rgba(0,0,0,0.05));">
+        © Copyright 2026 NELDO ENTERPRISES. All Rights Reserved.
+    </p>
+</footer>
+
+<!-- Cookie Storage Command Module -->
+<div id="cookieNotice">
+    <p class="text-xs text-slate-700 dark:text-gray-400 tracking-wide relative z-10 font-medium">We use essential cookies to remember your preferences and improve your browsing experience. <a href="Cookie.html" class="underline text-slate-900 dark:text-gray-200 hover:text-blue-700 dark:hover:text-white">Review Parameters</a>.</p>
+    <button id="acceptCookies" class="btn-machined px-4 py-1.5 text-xs rounded shrink-0 relative z-10">CONFIRM</button>
+</div>
+
+<!-- Integration Scripts Framework -->
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+AOS.init({ duration: 1000, once: true });
+
+// ====== Theme Controller Engine Initialization ======
+window.addEventListener('DOMContentLoaded', () => {
+    const savedTheme = localStorage.getItem('cynicdroid_theme') || 'light';
+    if (savedTheme === 'dark') {
+        document.documentElement.classList.add('dark');
+        updateThemeUI(true);
+    } else {
+        document.documentElement.classList.remove('dark');
+        updateThemeUI(false);
+    }
+});
+
+function toggleThemeEngine() {
+    const isDark = document.documentElement.classList.toggle('dark');
+    localStorage.setItem('cynicdroid_theme', isDark ? 'dark' : 'light');
+    updateThemeUI(isDark);
+}
+
+function updateThemeUI(isDark) {
+    const handle = document.getElementById('themeToggleHandle');
+    if (isDark) {
+        handle.innerText = "☀️";
+    } else {
+        handle.innerText = "🌙";
+    }
+}
+
+// ====== Compact FAQ Accordion Controller Engine ======
+document.querySelectorAll('.faq-trigger').forEach(trigger => {
+    trigger.addEventListener('click', () => {
+        const pane = trigger.nextElementSibling;
+        const isCurrentActive = trigger.classList.contains('active');
+        
+        document.querySelectorAll('.faq-trigger').forEach(t => {
+            t.classList.remove('active');
+            t.nextElementSibling.style.maxHeight = null;
+            t.nextElementSibling.style.borderBottomWidth = '0px';
+        });
+        
+        if (!isCurrentActive) {
+            trigger.classList.add('active');
+            pane.style.maxHeight = pane.scrollHeight + "px";
+            pane.style.borderBottomWidth = '2px';
+            const currentIsDark = document.documentElement.classList.contains('dark');
+            pane.style.borderBottomColor = currentIsDark ? '#1a2230' : '#e2e8f0';
+        }
+    });
+});
+
+// ====== Cookie Engine Validation ======
+window.addEventListener('load', () => {
+    if(!localStorage.getItem('cookiesAccepted')){
+        setTimeout(() => {
+            document.getElementById('cookieNotice').classList.add('show');
+        }, 800);
+    }
+    syncAuthUI();
+});
+
+document.getElementById('acceptCookies').addEventListener('click', () => {
+    localStorage.setItem('cookiesAccepted', 'true');
+    document.getElementById('cookieNotice').classList.remove('show');
+});
+
+// ====== USER PROFILE & AUTHENTICATION SUBSYSTEM ======
+function toggleAuthModal(show) {
+    const modal = document.getElementById('authModal');
+    if(show) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        switchModalMode('register');
+    } else {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+    }
+}
+
+function switchModalMode(mode) {
+    const regForm = document.getElementById('registrationForm');
+    const loginForm = document.getElementById('loginForm');
+    const badge = document.getElementById('modalBadge');
+    
+    if(mode === 'login') {
+        regForm.classList.add('hidden');
+        loginForm.classList.remove('hidden');
+        badge.innerText = "LOG IN TO YOUR ACCOUNT";
+    } else {
+        regForm.classList.remove('hidden');
+        loginForm.classList.add('hidden');
+        badge.innerText = "CREATE AN ACCOUNT";
+    }
+}
+
+function handleRegistration(e) {
+    e.preventDefault();
+    const userData = {
+        name: document.getElementById('regName').value,
+        email: document.getElementById('regEmail').value,
+        phone: document.getElementById('regPhone').value,
+        location: document.getElementById('regLocation').value,
+        password: document.getElementById('regPassword').value
+    };
+    
+    localStorage.setItem('cynicdroid_user', JSON.stringify(userData));
+    localStorage.setItem('cynicdroid_session', 'active');
+    
+    toggleAuthModal(false);
+    syncAuthUI();
+    document.getElementById('registrationForm').reset();
+}
+
+// ====== AUTH SUBSYSTEM INITIALIZATION MATRIX ======
+function handleLogin(e) {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPassword').value;
+    
+    const localUser = JSON.parse(localStorage.getItem('cynicdroid_user'));
+    
+    if(localUser && localUser.email === email && localUser.password === pass) {
+        localStorage.setItem('cynicdroid_session', 'active');
+        toggleAuthModal(false);
+        syncAuthUI();
+        document.getElementById('loginForm').reset();
+    } else {
+        alert("Error: The email or password you entered is incorrect.");
+    }
+}
+
+function handleLogout() {
+    localStorage.removeItem('cynicdroid_session');
+    syncAuthUI();
+}
+
+function syncAuthUI() {
+    const session = localStorage.getItem('cynicdroid_session');
+    const userContainer = document.getElementById('authNavContainer');
+
+    if (session === 'active') {
+        let user = {};
+        try {
+            user = JSON.parse(localStorage.getItem('cynicdroid_user')) || {};
+        } catch (error) {
+            user = {};
+        }
+
+        // Build the header controls without injecting user-provided text as HTML.
+        userContainer.replaceChildren();
+
+        const profileButton = document.createElement('button');
+        profileButton.type = 'button';
+        profileButton.className = 'telemetry-link';
+        profileButton.textContent = 'MY PROFILE';
+        profileButton.setAttribute('aria-haspopup', 'dialog');
+        profileButton.setAttribute('aria-controls', 'profileModal');
+        profileButton.addEventListener('click', () => toggleProfileModal(true));
+
+        const logoutButton = document.createElement('button');
+        logoutButton.type = 'button';
+        logoutButton.className = 'telemetry-link btn-logout';
+        logoutButton.textContent = 'LOG OUT';
+        logoutButton.addEventListener('click', handleLogout);
+
+        userContainer.append(profileButton, logoutButton);
+
+        document.getElementById('profName').textContent = user.name || '—';
+        document.getElementById('profEmail').textContent = user.email || '—';
+        document.getElementById('profPhone').textContent = user.phone || '—';
+        document.getElementById('profLocation').textContent = user.location || '—';
+    } else {
+        userContainer.innerHTML = `
+            <button type="button" onclick="toggleAuthModal(true)" class="telemetry-link">REGISTER / LOGIN</button>
+        `;
+        toggleProfileModal(false);
+    }
+}
+
+function toggleProfileModal(show) {
+    const modal = document.getElementById('profileModal');
+    if (!modal) return;
+
+    if (show && localStorage.getItem('cynicdroid_session') === 'active') {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('overflow-hidden');
+        const closeButton = modal.querySelector('.profile-modal-close');
+        if (closeButton) closeButton.focus();
+    } else {
+        modal.classList.remove('flex');
+        modal.classList.add('hidden');
+        modal.setAttribute('aria-hidden', 'true');
+        document.body.classList.remove('overflow-hidden');
+    }
+}
+
+// Close the profile modal when the user clicks the shaded backdrop or presses Escape.
+document.getElementById('profileModal').addEventListener('click', (event) => {
+    if (event.target === event.currentTarget) toggleProfileModal(false);
+});
+document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') {
+        toggleProfileModal(false);
+        const authModal = document.getElementById('authModal');
+        if (authModal && !authModal.classList.contains('hidden')) toggleAuthModal(false);
+    }
+});
+</script>
+</body>
+</html>

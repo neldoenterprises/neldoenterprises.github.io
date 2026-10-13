@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community Forum | NELDO ENTERPRISES</title>
+<link rel="shortcut icon" href="assets/images/photo-1652604894441-720x720.png" type="image/x-icon">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>tailwind.config={darkMode:'class'};</script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+:root{ --brand:#176b52; --brand-dark:#104b3a; --accent:#e99a35;--green:#174d38;--green2:#236448;--gold:#c9a45c;--cream:#f7f5ef;--ink:#1d2b24;--muted:#647067;--line:#e4e8e1}
+*{box-sizing:border-box}body{font-family:Inter,system-ui,sans-serif;background:var(--cream);color:var(--ink);margin:0;transition:background .2s,color .2s}button,input,textarea,select{font:inherit}.site-header{background:rgba(255,255,255,.96);border-bottom:1px solid var(--line);box-shadow:0 5px 24px #173e2b0b;backdrop-filter:blur(12px)}.brand-mark{width:42px;height:42px;border-radius:13px;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:900;letter-spacing:-1px}.brand-name{color:var(--green);font-weight:900;letter-spacing:.04em}.eyebrow{font-size:.72rem;letter-spacing:.13em;text-transform:uppercase;font-weight:800;color:var(--green2)}.hero{background:linear-gradient(125deg,#123d2c,#1c5a40 68%,#2c7050);color:white;position:relative;overflow:hidden}.hero:after{content:"";position:absolute;width:300px;height:300px;border:1px solid #ffffff18;border-radius:50%;right:-90px;top:-120px;box-shadow:0 0 0 35px #ffffff08,0 0 0 70px #ffffff05}.gold-rule{height:4px;width:54px;border-radius:99px;background:var(--gold)}.panel{background:#fff;border:1px solid var(--line);border-radius:20px;box-shadow:0 12px 30px #173e2b08}.soft-panel{background:#fbfaf6;border:1px solid var(--line);border-radius:14px}.field{width:100%;border:1px solid #d8dfd7;border-radius:11px;background:white;padding:12px 13px;color:#1d2b24;outline:none;transition:border .2s,box-shadow .2s}.field:focus{border-color:var(--green2);box-shadow:0 0 0 3px #23644818}.btn-primary{background:var(--green);color:white;border-radius:11px;padding:12px 16px;font-weight:750;transition:background .2s,transform .2s}.btn-primary:hover{background:#236448;transform:translateY(-1px)}.btn-secondary{border:1px solid #d9e0d8;background:#fff;color:var(--green);border-radius:10px;padding:9px 12px;font-weight:700}.btn-secondary:hover{background:#f1f6f1}.tag{background:#edf4ee;color:var(--green);border-radius:999px;padding:5px 9px;font-size:.7rem;font-weight:800}.topic-tab{padding:10px 13px;border-radius:10px;font-weight:750;font-size:.85rem;color:#637067;white-space:nowrap}.topic-tab.active{background:var(--green);color:#fff}.post-card{background:white;border:1px solid var(--line);border-radius:16px;padding:18px}.avatar{width:38px;height:38px;display:grid;place-items:center;border-radius:12px;background:#eaf1e9;color:var(--green);font-weight:900;flex-shrink:0}.muted{color:var(--muted)}.theme-btn{border:1px solid var(--line);background:white;border-radius:999px;padding:8px 11px;color:var(--green);font-weight:700}.modal-backdrop{background:#0b2119b8;backdrop-filter:blur(5px)}
+.dark body{background:#101a15;color:#e5eee7}.dark .site-header,.dark .panel,.dark .post-card,.dark .theme-btn,.dark .btn-secondary{background:#18251d;color:#e5eee7;border-color:#2b3b30}.dark .brand-name,.dark .eyebrow{color:#a9d2b4}.dark .soft-panel{background:#1e2b22;border-color:#2b3b30}.dark .field{background:#101a15;border-color:#34463a;color:#e5eee7}.dark .muted{color:#a5b3a8}.dark .topic-tab{color:#bdc9bf}.dark .topic-tab.active{background:#c9a45c;color:#1d2b24}.dark .avatar{background:#2b3d30;color:#d5e7d7}.dark .tag{background:#263b2c;color:#c6e1cb}.dark footer{background:#101a15!important;border-color:#2b3b30!important;color:#aab7ad!important}
+@media(max-width:640px){.hero{border-radius:18px}.post-card{padding:14px}}
+
+/* Shared NELDO homepage header theme */
+/* ===== Modern responsive header and accessible contact actions ===== */
+.neldo-header { transition:background .2s ease, box-shadow .2s ease; }
+.neldo-header-inner { min-height:78px; }
+.neldo-brand { text-decoration:none; flex-shrink:0; }
+.neldo-brand-mark { display:grid; place-items:center; width:46px; height:46px; border-radius:15px; background:linear-gradient(145deg,#176b52,#104b3a); color:#fff; font-size:1.45rem; font-weight:900; box-shadow:0 7px 16px rgba(23,107,82,.2); }
+.neldo-brand-name { color:#173d2e; font-size:1.12rem; font-weight:900; line-height:1.15; letter-spacing:.045em; white-space:nowrap; }
+.neldo-brand-name span { color:var(--brand); }
+.neldo-brand-tagline { margin-top:5px; color:#6a786f; font-size:.61rem; font-weight:800; letter-spacing:.09em; }
+.neldo-header-actions { justify-content:flex-end; }
+.neldo-socials { padding:4px; border:1px solid #e5ebe6; border-radius:999px; background:rgba(247,250,247,.86); }
+.social-action { display:inline-flex; align-items:center; justify-content:center; gap:7px; min-height:38px; padding:8px 12px; border-radius:999px; color:#294137; text-decoration:none; font-size:.78rem; font-weight:750; line-height:1; transition:transform .18s ease,background .18s ease,color .18s ease,box-shadow .18s ease; }
+.social-action svg { width:16px; height:16px; fill:currentColor; flex-shrink:0; }
+.social-action:hover { transform:translateY(-1px); box-shadow:0 5px 12px rgba(22,49,35,.1); }
+.social-whatsapp { color:#137347; background:#e8f6ed; }
+.social-whatsapp:hover { color:#fff; background:#16834d; }
+.social-call { color:#185c49; background:#eaf4ef; }
+.social-call:hover { color:#fff; background:#176b52; }
+.social-email { color:#8b5b14; background:#fff3dd; }
+.social-email:hover { color:#fff; background:#a86c17; }
+.neldo-header-tools { padding-left:10px; border-left:1px solid #e1e9e3; }
+.theme-label { color:#68776e; font-size:.68rem; font-weight:800; }
+.neldo-auth-container { min-height:38px; }
+.neldo-auth-container .telemetry-link { white-space:nowrap; }
+.dark .neldo-brand-name { color:#edf7f0; }
+.dark .neldo-brand-name span { color:#9ad7b3; }
+.dark .neldo-brand-tagline,.dark .theme-label { color:#b2c4b8; }
+.dark .neldo-socials { background:#17251d; border-color:#2b4234; }
+.dark .social-whatsapp { color:#a8e8bf; background:#203c2b; }
+.dark .social-whatsapp:hover { color:#fff; background:#16834d; }
+.dark .social-call { color:#b6e2cb; background:#20382d; }
+.dark .social-call:hover { color:#fff; background:#176b52; }
+.dark .social-email { color:#f5d49b; background:#3c3020; }
+.dark .social-email:hover { color:#fff; background:#98651d; }
+.dark .neldo-header-tools { border-left-color:#2a3d31; }
+@media(max-width:1023px) {
+  .neldo-header-inner { align-items:stretch; }
+  .neldo-header-actions { justify-content:space-between; }
+  .neldo-header-tools { padding-left:0; border-left:0; }
+}
+@media(max-width:640px) {
+  .neldo-header-inner { gap:10px; padding-top:10px; padding-bottom:10px; }
+  .neldo-brand-mark { width:40px; height:40px; border-radius:13px; }
+  .neldo-brand-name { font-size:.98rem; }
+  .neldo-brand-tagline { font-size:.52rem; letter-spacing:.06em; }
+  .neldo-header-actions { align-items:center; gap:8px; }
+  .neldo-socials { gap:3px; padding:3px; }
+  .social-action { width:36px; min-height:36px; padding:9px; }
+  .social-action span { display:none; }
+  .social-action svg { width:17px; height:17px; }
+  .theme-label { display:none; }
+  .neldo-header-tools { gap:7px; }
+  .neldo-auth-container .telemetry-link { font-size:.62rem; padding:.55rem .7rem; }
+  .main, main { padding-top:160px; }
+}
+@media(min-width:641px) and (max-width:1023px) {
+  .neldo-header-actions { flex-wrap:wrap; }
+  .social-action { padding:8px 10px; }
+}
+@media(prefers-reduced-motion:reduce) {
+  .neldo-header,.social-action { transition:none; }
+  .social-action:hover { transform:none; }
+}
+.neldo-header.nav-chassis { background:rgba(255,255,255,.96); border-bottom:1px solid #e1e9e3; box-shadow:0 8px 28px rgba(18,55,35,.08); backdrop-filter:blur(14px); }
+.dark .neldo-header.nav-chassis { background:rgba(17,29,22,.97); border-bottom:1px solid #2a3d31; box-shadow:0 8px 28px rgba(0,0,0,.22); }
+
+</style>
+</head>
+<body>
+<header class="nav-chassis neldo-header fixed inset-x-0 top-0 z-40">
+    <div class="container mx-auto px-4 md:px-6">
+        <div class="neldo-header-inner flex flex-col lg:flex-row lg:items-center lg:justify-between gap-3 py-3">
+            <!-- Brand -->
+            <a href="index.html" class="neldo-brand flex items-center gap-3 self-start" aria-label="NELDO ENTERPRISES home">
+                <span class="neldo-brand-mark" aria-hidden="true">N</span>
+                <span class="flex flex-col min-w-0">
+                    <span class="neldo-brand-name">NELDO <span>ENTERPRISES</span></span>
+                    <span class="neldo-brand-tagline">ELECTRONICS · FASHION · ICT SERVICES</span>
+                </span>
+            </a>
+
+            <!-- Quick contact and account actions -->
+            <div class="neldo-header-actions flex flex-wrap items-center gap-2 sm:gap-3">
+                <nav class="neldo-socials flex flex-wrap items-center gap-2" aria-label="Quick contact links">
+                    <a href="https://wa.me/254716375459" class="social-action social-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat with NELDO ENTERPRISES on WhatsApp" title="WhatsApp">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12.1 0C5.6 0 .3 5.3.3 11.8c0 2.1.6 4.2 1.7 6L0 24l6.4-1.7a11.8 11.8 0 0 0 5.7 1.4h.1c6.5 0 11.8-5.3 11.8-11.8 0-3.2-1.2-6.1-3.5-8.4ZM12.1 21.7h-.1a9.8 9.8 0 0 1-5-1.4l-.4-.2-3.8 1 1-3.7-.2-.4a9.8 9.8 0 0 1-1.5-5.2C2.1 6.4 6.6 2 12.1 2a9.7 9.7 0 0 1 6.9 2.9 9.7 9.7 0 0 1 2.9 6.9c0 5.5-4.4 9.9-9.8 9.9Zm5.4-7.4c-.3-.2-1.7-.9-2-1-.3-.1-.5-.2-.7.2-.2.3-.8 1-1 1.2-.2.2-.4.2-.7.1-.3-.2-1.2-.4-2.3-1.4-.9-.8-1.5-1.7-1.7-2-.2-.3 0-.5.1-.7l.5-.6c.2-.2.2-.4.3-.6.1-.2 0-.4 0-.6s-.7-1.6-1-2.2c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.6.1-.9.4-.3.3-1.2 1.1-1.2 2.6s1.2 3 1.4 3.2c.2.2 2.3 3.5 5.5 4.9.8.3 1.4.5 1.9.6.8.2 1.5.2 2 .1.6-.1 1.7-.7 2-1.4.2-.7.2-1.3.2-1.4-.1-.2-.3-.3-.6-.4Z"/></svg>
+                        <span>WhatsApp</span>
+                    </a>
+                    <a href="tel:+254716375459" class="social-action social-call" aria-label="Call NELDO ENTERPRISES" title="Call us">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.2 11.4 11.4 0 0 0 3.6.6 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1 11.4 11.4 0 0 0 .6 3.6 1 1 0 0 1-.2 1Z"/></svg>
+                        <span>Call</span>
+                    </a>
+                    <a href="mailto:cynicdroid@gmail.com" class="social-action social-email" aria-label="Email NELDO ENTERPRISES" title="Email us">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 4H4a2 2 0 0 0-2 2v.4l10 6.3 10-6.3V6a2 2 0 0 0-2-2ZM2 8.8V18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8.8l-9.5 6a1 1 0 0 1-1 0Z"/></svg>
+                        <span>Email</span>
+                    </a>
+                </nav>
+
+                <div class="neldo-header-tools flex items-center gap-2">
+                    <div class="neldo-theme-control flex items-center gap-2" title="Switch appearance">
+                        <span class="theme-label">Theme</span>
+                        <button type="button" id="themeToggleBtn" class="toggle-chassis" aria-label="Toggle light or dark theme" title="Toggle light or dark theme">
+                            <span id="themeToggleHandle" class="toggle-handle">🌙</span>
+                        </button>
+                    </div>
+                    <div id="authNavContainer" class="neldo-auth-container flex items-center gap-2">
+                        <!-- Injected by the existing authentication script -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 pt-36 sm:pt-32 pb-9 space-y-6">
+ <section class="hero rounded-3xl p-6 sm:p-10" aria-labelledby="heroTitle"><div class="relative z-10 max-w-3xl"><p class="text-xs font-extrabold tracking-[.18em] text-amber-200 uppercase">NELDO COMMUNITY</p><h1 id="heroTitle" class="text-3xl sm:text-5xl font-black tracking-tight mt-3 leading-tight">Ask questions. Share knowledge. <span class="text-amber-200">Grow together.</span></h1><p class="text-sm sm:text-base text-white/80 max-w-2xl mt-4 leading-7">A friendly space for technology help, device repairs, gadgets, fashion and everyday ideas. Learn from one another and keep the conversation respectful.</p><div class="gold-rule mt-6"></div><div class="flex flex-wrap gap-2 mt-6"><span class="border border-white/20 bg-white/10 rounded-full px-3 py-2 text-xs font-semibold">Tech & repairs</span><span class="border border-white/20 bg-white/10 rounded-full px-3 py-2 text-xs font-semibold">Phones & computers</span><span class="border border-white/20 bg-white/10 rounded-full px-3 py-2 text-xs font-semibold">Fashion & lifestyle</span></div></div></section>
+ <section id="userProfileMatrix" class="panel p-5 hidden"><div class="flex flex-wrap justify-between items-center gap-2"><div><p class="eyebrow">Your community profile</p><h2 class="font-extrabold text-lg mt-1">Welcome back, <span id="profFirstName">member</span></h2></div><span class="tag">SIGNED IN ON THIS DEVICE</span></div><div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 mt-4"><div class="soft-panel p-3"><p class="text-xs muted">Full name</p><p id="profName" class="font-bold text-sm mt-1 break-words">—</p></div><div class="soft-panel p-3"><p class="text-xs muted">Email</p><p id="profEmail" class="font-bold text-sm mt-1 break-words">—</p></div><div class="soft-panel p-3"><p class="text-xs muted">Phone</p><p id="profPhone" class="font-bold text-sm mt-1 break-words">—</p></div><div class="soft-panel p-3"><p class="text-xs muted">Location</p><p id="profLocation" class="font-bold text-sm mt-1 break-words">—</p></div></div></section>
+ <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-start">
+  <section class="panel p-5 sm:p-6 lg:col-span-4" id="composerPanel"><p class="eyebrow">Join the conversation</p><h2 class="text-xl font-extrabold mt-2">Start a discussion</h2><p class="muted text-sm mt-2 leading-6">Share a question, a useful tip or a solution that could help someone else.</p><div id="signinHint" class="soft-panel p-3 mt-4 text-sm muted">You can post using a display name. Register or log in if you want your profile details shown here.</div>
+   <form id="postForm" class="space-y-4 mt-5"><div><label for="postAlias" class="block text-sm font-bold mb-1.5">Display name</label><input id="postAlias" class="field" maxlength="50" placeholder="Your name or nickname" required></div><div><label for="postCategory" class="block text-sm font-bold mb-1.5">Topic</label><select id="postCategory" class="field"><option>Phones & accessories</option><option>Computer help</option><option>Repairs & troubleshooting</option><option>Fashion & lifestyle</option><option>Business & ICT</option><option>General discussion</option></select></div><div><label for="postTitle" class="block text-sm font-bold mb-1.5">Discussion title</label><input id="postTitle" class="field" maxlength="100" placeholder="What would you like help with?" required></div><div><label for="postBody" class="block text-sm font-bold mb-1.5">Your message</label><textarea id="postBody" class="field min-h-36 resize-y" maxlength="3000" placeholder="Add details so the community can help…" required></textarea><p class="text-xs muted mt-1">Please don't include passwords or private information.</p></div><button class="btn-primary w-full" type="submit">Publish discussion <span aria-hidden="true">→</span></button><p id="postNotice" class="text-sm hidden" role="status"></p></form>
+  </section>
+  <section class="panel p-5 sm:p-6 lg:col-span-8"><div class="flex flex-wrap justify-between items-start gap-3"><div><p class="eyebrow">Community board</p><h2 class="text-2xl font-extrabold mt-1">Recent discussions</h2><p class="muted text-sm mt-1">Questions, ideas and practical solutions from the community.</p></div><span id="postCount" class="tag">0 discussions</span></div>
+   <div class="flex gap-1.5 overflow-x-auto mt-5 pb-2" role="tablist" aria-label="Filter discussions"><button class="topic-tab active" data-filter="All" type="button">All topics</button><button class="topic-tab" data-filter="Phones & accessories" type="button">Phones</button><button class="topic-tab" data-filter="Computer help" type="button">Computers</button><button class="topic-tab" data-filter="Repairs & troubleshooting" type="button">Repairs</button><button class="topic-tab" data-filter="Fashion & lifestyle" type="button">Fashion</button><button class="topic-tab" data-filter="Business & ICT" type="button">Business & ICT</button></div>
+   <div id="feed" class="space-y-3 mt-2" aria-live="polite"></div><div id="emptyState" class="soft-panel p-7 text-center mt-3"><div class="text-3xl">💬</div><h3 class="font-extrabold mt-3">Be the first to start a conversation</h3><p class="muted text-sm mt-2">Your published discussions will appear here on this device.</p></div>
+   <p class="text-xs muted mt-5 leading-5">Note: this version saves posts in this browser only. Other visitors will not see them until a shared database or forum backend is connected.</p>
+  </section>
+ </div>
+ <section class="panel p-5 sm:p-6"><p class="eyebrow">What this community is about</p><h2 class="text-xl font-extrabold mt-2">Useful conversations, real-world answers</h2><div class="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5"><article class="soft-panel p-4"><div class="text-2xl">📱</div><h3 class="font-extrabold mt-3">Devices & repairs</h3><p class="muted text-sm leading-6 mt-2">Discuss phone and laptop problems, accessories, upgrades, maintenance and troubleshooting.</p></article><article class="soft-panel p-4"><div class="text-2xl">🛍️</div><h3 class="font-extrabold mt-3">Fashion & lifestyle</h3><p class="muted text-sm leading-6 mt-2">Share style ideas, product tips and everyday recommendations with other community members.</p></article><article class="soft-panel p-4"><div class="text-2xl">🤝</div><h3 class="font-extrabold mt-3">Respect & support</h3><p class="muted text-sm leading-6 mt-2">Be helpful, stay courteous and avoid sharing private information or misleading advice.</p></article></div></section>
+</main>
+<div id="authModal" class="modal-backdrop fixed inset-0 hidden items-center justify-center z-50 p-4"><div class="panel w-full max-w-lg p-5 sm:p-7 relative max-h-[90vh] overflow-y-auto"><button type="button" id="closeModal" class="btn-secondary absolute top-4 right-4" aria-label="Close account window">✕</button><p class="eyebrow" id="modalEyebrow">NELDO COMMUNITY</p><h2 id="modalTitle" class="text-2xl font-extrabold mt-2 mb-5">Create your account</h2><form id="registrationForm" class="space-y-3"><label class="block text-sm font-bold">Full name<input id="regName" class="field mt-1.5" required maxlength="100" autocomplete="name"></label><label class="block text-sm font-bold">Email address<input id="regEmail" type="email" class="field mt-1.5" required autocomplete="email"></label><label class="block text-sm font-bold">Phone number<input id="regPhone" type="tel" class="field mt-1.5" required autocomplete="tel"></label><label class="block text-sm font-bold">Town / county<input id="regLocation" class="field mt-1.5" required autocomplete="address-level2"></label><label class="block text-sm font-bold">Password<input id="regPassword" type="password" minlength="8" class="field mt-1.5" required autocomplete="new-password"><span class="muted text-xs font-normal">Use at least 8 characters.</span></label><button class="btn-primary w-full" type="submit">Create account</button><p class="text-sm muted text-center">Already registered? <button type="button" id="showLogin" class="font-bold underline">Log in</button></p></form><form id="loginForm" class="space-y-3 hidden"><label class="block text-sm font-bold">Email address<input id="loginEmail" type="email" class="field mt-1.5" required autocomplete="email"></label><label class="block text-sm font-bold">Password<input id="loginPassword" type="password" class="field mt-1.5" required autocomplete="current-password"></label><button class="btn-primary w-full" type="submit">Log in</button><p class="text-sm muted text-center">New here? <button type="button" id="showRegister" class="font-bold underline">Create an account</button></p></form><p id="authNotice" class="text-sm mt-3 hidden" role="status"></p><p class="muted text-xs leading-5 mt-5">Account details on this demo are stored only in your browser and are not protected like a real online account. Do not use a password you use elsewhere. A secure server-side authentication system is needed for public registration.</p></div></div>
+<footer class="mt-10 border-t bg-white py-7 text-center"><p class="font-extrabold text-sm text-green-900">NELDO ENTERPRISES</p><p class="muted text-xs mt-2">DEALERS IN ELECTRONICS · ACCESSORIES · FASHION & ICT SERVICES</p><p class="muted text-xs mt-3">© 2026 NELDO ENTERPRISES. All rights reserved.</p></footer>
+<script>
+const $=id=>document.getElementById(id);
+let activeFilter='All';
+const samplePosts=[
+ {id:'sample-1',name:'Community Member',category:'Computer help',title:'What should I check when a laptop runs unusually hot?',body:'My laptop gets very hot during normal use. What basic checks and maintenance steps would you recommend before replacing any parts?',date:'Community starter topic',sample:true},
+ {id:'sample-2',name:'Tech Community',category:'Phones & accessories',title:'How do you tell a good-quality charging cable?',body:'Share the signs you look for when choosing a reliable cable or charger and keeping a phone battery healthy.',date:'Community starter topic',sample:true},
+ {id:'sample-3',name:'NELDO Community',category:'Fashion & lifestyle',title:'What everyday accessories are worth investing in?',body:'Let’s share practical ideas for useful accessories, personal style and value for money.',date:'Community starter topic',sample:true}
+];
+function readPosts(){try{return JSON.parse(localStorage.getItem('neldo_forum_posts')||'[]')}catch{return []}}
+function savePosts(posts){localStorage.setItem('neldo_forum_posts',JSON.stringify(posts))}
+function allPosts(){return [...readPosts(),...samplePosts]}
+function escapeHTML(value){return String(value??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function renderFeed(){const posts=allPosts().filter(p=>activeFilter==='All'||p.category===activeFilter).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0));$('postCount').textContent=`${posts.length} discussion${posts.length===1?'':'s'}`;$('emptyState').classList.toggle('hidden',posts.length>0);$('feed').innerHTML=posts.map(p=>`<article class="post-card"><div class="flex gap-3"><div class="avatar">${escapeHTML((p.name||'?').trim().charAt(0).toUpperCase())}</div><div class="min-w-0 flex-1"><div class="flex flex-wrap items-center gap-2"><span class="font-extrabold text-sm">${escapeHTML(p.name)}</span><span class="tag">${escapeHTML(p.category)}</span></div><h3 class="font-extrabold text-base sm:text-lg mt-2 break-words">${escapeHTML(p.title)}</h3><p class="text-sm leading-6 muted mt-2 whitespace-pre-wrap break-words">${escapeHTML(p.body)}</p><p class="text-xs muted mt-3">${escapeHTML(p.date||'Just now')}${p.sample?' · Example topic':''}</p></div></div></article>`).join('')}
+function showNotice(el,msg,ok=false){el.textContent=msg;el.classList.remove('hidden');el.style.color=ok?'#236448':'#b42318'}
+function setModal(mode){$('authModal').classList.remove('hidden');$('authModal').classList.add('flex');const reg=mode==='register';$('registrationForm').classList.toggle('hidden',!reg);$('loginForm').classList.toggle('hidden',reg);$('modalTitle').textContent=reg?'Create your account':'Welcome back';$('modalEyebrow').textContent=reg?'JOIN THE COMMUNITY':'MEMBER ACCESS';$('authNotice').classList.add('hidden')}
+function closeModal(){$('authModal').classList.add('hidden');$('authModal').classList.remove('flex')}
+function syncAuthUI(){let user=null;try{user=JSON.parse(localStorage.getItem('cynicdroid_user')||'null')}catch{}const active=localStorage.getItem('cynicdroid_session')==='active'&&user;$('authNavContainer').innerHTML=active?`<span class="btn-secondary hidden sm:inline-flex">Hi, ${escapeHTML((user.name||'Member').split(' ')[0])}</span><button class="btn-secondary" id="logoutBtn" type="button">Log out</button>`:`<button class="btn-primary" id="openAuthBtn" type="button">Register / Log in</button>`;if(active){$('profName').textContent=user.name||'—';$('profFirstName').textContent=(user.name||'member').split(' ')[0];$('profEmail').textContent=user.email||'—';$('profPhone').textContent=user.phone||'—';$('profLocation').textContent=user.location||'—';$('userProfileMatrix').classList.remove('hidden');$('signinHint').textContent='You are signed in on this device. Your discussions are still stored locally in this browser.';$('postAlias').value=user.name||''}else{$('userProfileMatrix').classList.add('hidden');$('signinHint').textContent='You can post using a display name. Register or log in if you want your profile details shown here.'}const open=$('openAuthBtn');if(open)open.addEventListener('click',()=>setModal('register'));const logout=$('logoutBtn');if(logout)logout.addEventListener('click',()=>{localStorage.removeItem('cynicdroid_session');syncAuthUI()})}
+$('themeToggleBtn').addEventListener('click',()=>{const dark=!document.documentElement.classList.contains('dark');document.documentElement.classList.toggle('dark',dark);localStorage.setItem('cynicdroid_theme',dark?'dark':'light');$('themeToggleHandle').innerText=dark?'☀️':'🌙'});
+(function initTheme(){const dark=localStorage.getItem('cynicdroid_theme')==='dark';document.documentElement.classList.toggle('dark',dark);$('themeToggleHandle').innerText=dark?'☀️':'🌙'})();
+document.querySelectorAll('[data-filter]').forEach(btn=>btn.addEventListener('click',()=>{activeFilter=btn.dataset.filter;document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b===btn));renderFeed()}));
+$('postForm').addEventListener('submit',e=>{e.preventDefault();const name=$('postAlias').value.trim(),title=$('postTitle').value.trim(),body=$('postBody').value.trim();if(!name||!title||!body){showNotice($('postNotice'),'Please complete all required fields.');return}const posts=readPosts();posts.unshift({id:`p-${Date.now()}`,name,category:$('postCategory').value,title,body,date:new Date().toLocaleString(),createdAt:Date.now()});try{savePosts(posts);$('postForm').reset();const user=JSON.parse(localStorage.getItem('cynicdroid_user')||'null');if(user)$('postAlias').value=user.name||'';activeFilter='All';document.querySelectorAll('[data-filter]').forEach(b=>b.classList.toggle('active',b.dataset.filter==='All'));renderFeed();showNotice($('postNotice'),'Your discussion has been added on this device.',true)}catch(err){showNotice($('postNotice'),'Could not save this discussion. Your browser storage may be full.')}});
+$('closeModal').addEventListener('click',closeModal);$('authModal').addEventListener('click',e=>{if(e.target===$('authModal'))closeModal()});$('showLogin').addEventListener('click',()=>setModal('login'));$('showRegister').addEventListener('click',()=>setModal('register'));
+$('registrationForm').addEventListener('submit',e=>{e.preventDefault();const email=$('regEmail').value.trim().toLowerCase();let old=null;try{old=JSON.parse(localStorage.getItem('cynicdroid_user')||'null')}catch{}if(old&&old.email&&old.email.toLowerCase()===email){showNotice($('authNotice'),'An account for this email already exists in this browser. Please log in.');return}const user={name:$('regName').value.trim(),email,phone:$('regPhone').value.trim(),location:$('regLocation').value.trim(),password:$('regPassword').value};try{localStorage.setItem('cynicdroid_user',JSON.stringify(user));localStorage.setItem('cynicdroid_session','active');closeModal();syncAuthUI();$('registrationForm').reset()}catch{showNotice($('authNotice'),'Could not save the account in this browser.')}});
+$('loginForm').addEventListener('submit',e=>{e.preventDefault();let user=null;try{user=JSON.parse(localStorage.getItem('cynicdroid_user')||'null')}catch{}if(user&&user.email.toLowerCase()===$('loginEmail').value.trim().toLowerCase()&&user.password===$('loginPassword').value){localStorage.setItem('cynicdroid_session','active');closeModal();syncAuthUI();$('loginForm').reset()}else{showNotice($('authNotice'),'Email or password does not match an account saved in this browser.')}});
+syncAuthUI();renderFeed();
+</script>
+</body></html>
