@@ -82,7 +82,7 @@ html.dark .old-price{color:#9eaaa1}
 const SHEET_ID='1iwx7g70IorDYWTt4ZvToSOhRBdRNF4W-VnT_x-phiy0';
 const SHEET_GID='0';
 const STORAGE={cart:'cart',profile:'neldo_customer_profile_v1',orders:'neldo_order_history_v1'};
-// EmailJS IDs below must be replaced with the NEW account's service and two template IDs before launch.
+// EmailJS configuration for NELDO ENTERPRISES customer and seller templates.
 const EMAILJS_PUBLIC_KEY='nd-nOPHuh5nrF62QB', EMAILJS_SERVICE='service_3usiqaf', EMAILJS_ADMIN_TEMPLATE='template_kocdb34', EMAILJS_CUSTOMER_TEMPLATE='template_aw2v9tk';
 if(window.emailjs && EMAILJS_PUBLIC_KEY.startsWith('REPLACE_')===false){emailjs.init({publicKey:EMAILJS_PUBLIC_KEY});}
 const TAXONOMY=[
@@ -231,16 +231,24 @@ $('cartBtn').onclick=openCart;$('proceedCheckout').onclick=openCheckout;
 function customerParams(name,email,phone,ref,items,total){
  const lines=items.map(x=>`${x.title} × ${x.qty} @ ${money(x.price)} = ${money(x.price*x.qty)}`).join('\\n');
  const htmlItems=items.map(x=>`${x.title} × ${x.qty} — ${money(x.price*x.qty)}`).join('\\n');
+ const deliveryMethod=$('checkoutDelivery').value;
+ const deliveryAddress=$('checkoutAddress').value.trim() || 'Not provided';
+ const paymentMethod=$('checkoutPayment').value;
+ const dateText=new Date().toLocaleString('en-KE',{timeZone:'Africa/Nairobi'});
  return {
-  to_email:email, customer_name:name, from_name:name, from_phone:phone, from_email:email,
-  order_reference:ref, products:htmlItems, items:lines, item_count:items.reduce((n,x)=>n+x.qty,0),
+  // Recipient and customer aliases used by the EmailJS template fields
+  to_email:email, customer_email:email, customer_name:name, customer_phone:phone,
+  from_name:'NELDO ENTERPRISES', from_phone:phone, from_email:'neldoenterprises@gmail.com',
+  // Order reference/items aliases used by both templates
+  order_id:ref, order_reference:ref, products:htmlItems, order_items:lines, items:lines,
+  item_count:items.reduce((n,x)=>n+x.qty,0),
   subtotal:money(total), total:money(total), order_total:money(total), order_total_raw:total,
-  shipping_method:$('checkoutDelivery').value, shipping_address:$('checkoutAddress').value.trim(),
-  delivery_notes:$('checkoutAddress').value.trim(), payment_method:$('checkoutPayment').value,
+  shipping_method:deliveryMethod, delivery_method:deliveryMethod,
+  shipping_address:deliveryAddress, delivery_address:deliveryAddress, delivery_notes:deliveryAddress,
+  payment_method:paymentMethod, payment_status:'Pending verification', order_status:'Received — awaiting confirmation',
   paybill_business_number:'247247', paybill_account_number:'0716375459',
   shipping_cost:'To be confirmed by NELDO', final_payable_total:'Pending shipping confirmation',
-  order_date:new Date().toLocaleString('en-KE',{timeZone:'Africa/Nairobi'}),
-  store_name:'NELDO ENTERPRISES', store_email:'neldoenterprises@gmail.com',
+  order_date:dateText, store_name:'NELDO ENTERPRISES', store_email:'neldoenterprises@gmail.com',
   items_json:JSON.stringify(items.map(x=>({title:x.title,qty:x.qty,unit_price:x.price,line_total:x.price*x.qty,image:x.img||''})))
  };
 }
