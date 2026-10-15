@@ -231,6 +231,28 @@ $('cartBtn').onclick=openCart;$('proceedCheckout').onclick=openCheckout;
 function customerParams(name,email,phone,ref,items,total){
  const lines=items.map(x=>`${x.title} × ${x.qty} @ ${money(x.price)} = ${money(x.price*x.qty)}`).join('\\n');
  const htmlItems=items.map(x=>`${x.title} × ${x.qty} — ${money(x.price*x.qty)}`).join('\\n');
+ const productsHtml=`
+  <table role="table" cellpadding="0" cellspacing="0" border="0" width="100%" style="width:100%;border-collapse:collapse;font-family:Arial,Helvetica,sans-serif;font-size:13px;color:#243328;border:1px solid #dce5dc;">
+   <thead><tr style="background:#174b35;color:#ffffff;">
+    <th scope="col" align="center" style="padding:11px 8px;border:1px solid #dce5dc;color:#ffffff;font-size:12px;">Item image</th>
+    <th scope="col" align="left" style="padding:11px 8px;border:1px solid #dce5dc;color:#ffffff;font-size:12px;">Item name</th>
+    <th scope="col" align="left" style="padding:11px 8px;border:1px solid #dce5dc;color:#ffffff;font-size:12px;">SKU / Product ID</th>
+    <th scope="col" align="right" style="padding:11px 8px;border:1px solid #dce5dc;color:#ffffff;font-size:12px;white-space:nowrap;">Price</th>
+    <th scope="col" align="center" style="padding:11px 8px;border:1px solid #dce5dc;color:#ffffff;font-size:12px;">Qty</th>
+   </tr></thead><tbody>
+   ${items.map((x,i)=>{
+    const image=safeImage(x.img);
+    const rowBg=i%2===0?'#ffffff':'#f5f8f4';
+    return `<tr style="background:${rowBg};">
+     <td align="center" valign="middle" style="padding:8px;border:1px solid #dce5dc;width:76px;">${image?`<img src="${escapeHTML(image)}" alt="${escapeHTML(x.title)}" width="56" height="56" style="display:block;width:56px;height:56px;max-width:56px;object-fit:contain;border:0;outline:none;text-decoration:none;">`:'<span style="font-size:11px;color:#778277;">No image</span>'}</td>
+     <td valign="middle" style="padding:10px 8px;border:1px solid #dce5dc;font-weight:bold;">${escapeHTML(x.title)}</td>
+     <td valign="middle" style="padding:10px 8px;border:1px solid #dce5dc;word-break:break-word;">${escapeHTML(x.id||x.sku||'—')}</td>
+     <td align="right" valign="middle" style="padding:10px 8px;border:1px solid #dce5dc;white-space:nowrap;">${escapeHTML(money(x.price))}</td>
+     <td align="center" valign="middle" style="padding:10px 8px;border:1px solid #dce5dc;">${Number(x.qty)||0}</td>
+    </tr>`;
+   }).join('')}
+   </tbody>
+  </table>`;
  const deliveryMethod=$('checkoutDelivery').value;
  const deliveryAddress=$('checkoutAddress').value.trim() || 'Not provided';
  const paymentMethod=$('checkoutPayment').value;
@@ -239,8 +261,8 @@ function customerParams(name,email,phone,ref,items,total){
   // Recipient and customer aliases used by the EmailJS template fields
   to_email:email, customer_email:email, customer_name:name, customer_phone:phone,
   from_name:'NELDO ENTERPRISES', from_phone:phone, from_email:'neldoenterprises@gmail.com',
-  // Order reference/items aliases used by both templates
-  order_id:ref, order_reference:ref, products:htmlItems, order_items:lines, items:lines,
+  // Preserve existing aliases and provide a separate HTML table for both email templates
+  order_id:ref, order_reference:ref, products:htmlItems, products_html:productsHtml, order_items:lines, items:lines,
   item_count:items.reduce((n,x)=>n+x.qty,0),
   subtotal:money(total), total:money(total), order_total:money(total), order_total_raw:total,
   shipping_method:deliveryMethod, delivery_method:deliveryMethod,
@@ -249,7 +271,7 @@ function customerParams(name,email,phone,ref,items,total){
   paybill_business_number:'247247', paybill_account_number:'0716375459',
   shipping_cost:'To be confirmed by NELDO', final_payable_total:'Pending shipping confirmation',
   order_date:dateText, store_name:'NELDO ENTERPRISES', store_email:'neldoenterprises@gmail.com',
-  items_json:JSON.stringify(items.map(x=>({title:x.title,qty:x.qty,unit_price:x.price,line_total:x.price*x.qty,image:x.img||''})))
+  items_json:JSON.stringify(items.map(x=>({id:x.id||x.sku||'',sku:x.id||x.sku||'',title:x.title,qty:x.qty,unit_price:x.price,line_total:x.price*x.qty,image:x.img||''})))
  };
 }
 function makeRef(){const d=new Date(),date=d.getFullYear()+String(d.getMonth()+1).padStart(2,'0')+String(d.getDate()).padStart(2,'0');return 'NEL-'+date+'-'+Math.random().toString(36).slice(2,8).toUpperCase()}
